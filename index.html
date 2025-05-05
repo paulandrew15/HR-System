@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UDM Human Resource System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-screen" class="login-container">
+    <form class="login-box" onsubmit="loginUser(event)">
+      <h2>Login</h2>
+      <label for="account">Account ID:</label>
+      <input type="text" id="account" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required />
+
+      <label class="show-password">
+        <input type="checkbox" id="togglePassword" /> Show Password
+      </label>
+
+      <p class="forgot-password">
+        <a href="#" onclick="forgotPassword()">Forgot Password?</a>
+      </p>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div id="dashboard" class="dashboard-container" style="display: none;">
+    <aside class="sidebar">
+      <h2>UDM HR</h2>
+      <nav>
+        <a href="#" onclick="showSection('home')">HOME</a>
+        <a href="#" onclick="showSection('profile')">ADMIN PROFILE</a>
+        <a href="#" onclick="showSection('attendance')">EMPLOYEE ATTENDANCE</a>
+        <a href="#" onclick="showSection('memo')">MEMO</a>
+        <a href="#" onclick="showSection('credit')">CREDIT</a>
+      </nav>
+    <div class="logout" onclick="logout()">🔒 SIGN OUT</div>
+    </aside>
+
+    <div class="main-content">
+      <div id="home" class="content-section">
+        <h1>HOME</h1>
+        <p>Welcome to the HR system.</p>
+      </div>
+      <div id="profile" class="content-section" style="display: none;">
+        <h1>ADMIN PROFILE</h1>
+      </div>
+      <div id="attendance" class="content-section" style="display: none;">
+        <h1>EMPLOYEE ATTENDANCE</h1>
+      </div>
+      <div id="memo" class="content-section" style="display: none;">
+        <h1>MEMO</h1>
+      </div>
+      <div id="credit" class="content-section" style="display: none;">
+        <h1>CREDIT</h1>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
